@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>First Date</title>
+</head>
+<body>
+    <!-- Encabezado: título y fecha de hoy (se ve en todas las capas) -->
+    <header class="encabezado">
+        <h1 class="titulo">First Date</h1>
+        <p id="fecha-hoy" class="fecha"></p>
+    </header>
+
+    <!-- Tarjeta central donde aparece la capa actual -->
+    <main class="tarjeta">
+
+    <!-- Capa 1: Nombre -->
+    <section id="capa-nombre" class="capa">
+        <form id="form-nombre">
+            <label for="input-nombre">Ingresa tu nombre:</label>
+            <input type="text" id="input-nombre">
+            <button type="submit">Continuar</button>
+        </form>
+        <p id="error-nombre" class="error"></p>
+    </section>
+
+    <!-- Capa 2: Contraseña -->
+    <section id="capa-password" class="capa">
+        <p id="mensaje-password" class="mensaje"></p>
+        <form id="form-password">
+            <label for="input-password">Ingrese la contraseña:</label>
+            <input type="password" id="input-password">
+            <button type="submit">Continuar</button>
+        </form>
+        <p id="error-password" class="error"></p>
+    </section>
+
+    <!-- Capa 3: Categorías -->
+    <section id="capa-categorias" class="capa">
+        <p id="mensaje-categorias" class="mensaje"></p>
+        <h2>¿Dónde quieres ir?</h2>
+        <div id="botones-categorias" class="botones"></div>
+    </section>
+
+    <!-- Capa 4: Lugares de la categoría elegida -->
+    <section id="capa-lugares" class="capa">
+        <p id="mensaje-lugares" class="mensaje"></p>
+        <h2 id="pregunta-lugares"></h2>
+        <div id="botones-lugares" class="botones"></div>
+    </section>
+
+    <!-- Capa 5: Día y hora del lugar elegido -->
+    <section id="capa-horarios" class="capa">
+        <p id="mensaje-horarios" class="mensaje"></p>
+        <div id="info-lugar"></div>
+        <h2>Días y Horarios</h2>
+        <div id="botones-horarios" class="botones"></div>
+    </section>
+
+    <!-- Capa 6: Resumen -->
+    <section id="capa-resumen" class="capa">
+        <h2>=== RESUMEN DE LA CITA ===</h2>
+        <p id="resumen-nombre" class="fila-resumen"></p>
+        <p id="resumen-lugar" class="fila-resumen"></p>
+        <div id="resumen-imagen"></div>
+        <p id="resumen-direccion" class="fila-resumen"></p>
+        <p id="resumen-horario" class="fila-resumen"></p>
+        <button type="button" id="boton-reiniciar" class="boton-reiniciar">Reiniciar cita</button>
+    </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

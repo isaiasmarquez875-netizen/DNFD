@@ -1,0 +1,296 @@
+/* ===== Estilos copiados de mus.css (los que usa citaDN1.html) ===== */
+
+.museo {
+  max-width: 700px;
+  margin: 30px auto;
+}
+
+.museo img {
+  display: block;
+  width: 350px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.intro {
+  color: black;
+  font-size: 20px;
+  text-align: left;
+  margin: 0;
+}
+.biblioteca img {
+ display: block;
+  width: 350px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.biblioteca {
+  max-width: 700px;
+  margin: 30px auto;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: black;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.bosque img {
+  display: block;
+  width: 350px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.bosque {
+  max-width: 700px;
+  margin: 30px auto;
+}
+
+.barrio img {
+  display: block;
+  width: 350px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.barrio {
+  max-width: 700px;
+  margin: 30px auto;
+}
+
+/* ===== Estilos nuevos de la página por capas ===== */
+
+/* Colores de la página en un solo lugar */
+:root {
+  --fondo: #f6f1ec;
+  --tarjeta: #ffffff;
+  --texto: #2b2730;
+  --texto-suave: #6e6672;
+  --principal: #b4475a;
+  --principal-oscuro: #93364a;
+  --borde: #e6ddd5;
+  --exito-fondo: #e9f5ee;
+  --exito-texto: #23663f;
+  --error-fondo: #fdecec;
+  --error-texto: #a52a2a;
+}
+
+/* Página completa */
+body {
+  margin: 0;
+  padding: 0 16px 48px;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Encabezado con título y fecha */
+.encabezado {
+  text-align: center;
+  padding: 40px 0 24px;
+}
+
+.encabezado .titulo {
+  margin: 0;
+  font-size: 40px;
+  letter-spacing: 1px;
+  color: var(--principal);
+}
+
+.fecha {
+  display: inline-block;
+  margin: 12px 0 0;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  color: var(--texto-suave);
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+/* Tarjeta blanca donde se ve la capa actual */
+.tarjeta {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px;
+  background: var(--tarjeta);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(60, 40, 50, 0.08);
+}
+
+/* Todas las capas están ocultas... */
+.capa {
+  display: none;
+}
+
+/* ...menos la que tiene la clase "activa" */
+.capa.activa {
+  display: block;
+}
+
+.capa h2 {
+  margin: 8px 0 20px;
+  font-size: 24px;
+  color: var(--texto);
+}
+
+/* Formularios de nombre y contraseña */
+.capa form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.capa label {
+  font-weight: 600;
+}
+
+.capa input {
+  padding: 12px 14px;
+  font-size: 16px;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  outline: none;
+}
+
+.capa input:focus {
+  border-color: var(--principal);
+  box-shadow: 0 0 0 3px rgba(180, 71, 90, 0.15);
+}
+
+.capa form button {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--principal);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.capa form button:hover {
+  background: var(--principal-oscuro);
+}
+
+/* Mensajes de confirmación (los "echo" del script) */
+.mensaje:not(:empty) {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--exito-fondo);
+  color: var(--exito-texto);
+  font-weight: 600;
+}
+
+/* Mensajes de error */
+.error:not(:empty) {
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--error-fondo);
+  color: var(--error-texto);
+  font-weight: 600;
+}
+
+/* Botones de opciones, uno debajo de otro */
+.botones button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px 16px;
+  font-size: 16px;
+  text-align: left;
+  color: var(--texto);
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.botones button:hover {
+  border-color: var(--principal);
+  color: var(--principal);
+}
+
+/* El último botón es siempre "volver": se ve más discreto */
+.botones button:last-child:not(:only-child) {
+  margin-top: 16px;
+  color: var(--texto-suave);
+  background: var(--fondo);
+  border-style: dashed;
+}
+
+/* Las imágenes mantienen el tamaño de citaDN1.html; solo se centran */
+.capa .bosque img,
+.capa .museo img,
+.capa .barrio img,
+.capa .biblioteca img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.capa .bosque,
+.capa .museo,
+.capa .barrio,
+.capa .biblioteca {
+  margin: 0 auto 16px;
+}
+
+/* Enlace de la dirección en el resumen */
+#resumen-direccion a {
+  color: var(--principal);
+  font-weight: 600;
+}
+
+/* Botón para reiniciar la cita */
+.boton-reiniciar {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--principal);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.boton-reiniciar:hover {
+  background: var(--principal-oscuro);
+}
+
+/* Filas del resumen */
+.fila-resumen {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--fondo);
+  font-size: 18px;
+}
+
+/* En pantallas chicas la tarjeta tiene menos espacio interno */
+@media (max-width: 480px) {
+  .tarjeta {
+    padding: 20px;
+  }
+}
